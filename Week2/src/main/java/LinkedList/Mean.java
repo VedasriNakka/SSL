@@ -49,14 +49,18 @@ public class Mean {
 	
 		ArrayList<Integer> value = new ArrayList<Integer>();
 	
-		System.out.println("Enter num to check: ");
+		System.out.println("Enter length of number list to check: ");
 		Scanner sc = new Scanner(System.in);		
 		num = sc.nextInt();
 		
-		System.out.println("Enter values:");
+		System.out.println(num);
+		
+			
 		for(int i =0; i<num; i++) {
-			value.add(new Integer(num));
-			num = sc.nextInt();
+			System.out.println("Enter the number: ");
+			int num1 = sc.nextInt();
+			System.out.println("Your entered number is: "+ num1);
+			value.add(new Integer(num1));
 		}
 		sc.close();
 		
