@@ -5,3 +5,6 @@ AWT,Abstract Window Toolkit
 AWS,Amazon Web Services
 BER,Bit Error Rate
 CAM,Computer-Aided Manufacturing
+ftp,File Transfer Protocol
+ntp,Network Time Protocol
+oop,Out Of Memory

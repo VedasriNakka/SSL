@@ -28,6 +28,8 @@ public class MapsPrint {
 		while((line = br.readLine()) != null) {
 			//System.out.println(line.toString()+ "\n");
 			String S[] = line.split(",");
+			System.out.println(S[0] +" : "+ S[1]);
+			//System.out.println("\n");
 			
 			hstable.put(S[0], S[1]);
 			hsmap.put(S[0], S[1]);
@@ -37,6 +39,7 @@ public class MapsPrint {
 			//List<String> groceries = Arrays.asList("Potatoes", "Ketchup", "Eggs");
 			
 		}
+		System.out.println("\n");
 		hstable.forEach((key,value) -> System.out.println(key + ":" + value));
 		System.out.println("\n");
 		System.out.println("Hashmap:" + hsmap + "\n"); // is faster
