@@ -8,26 +8,6 @@ import java.util.Scanner;
 
 public class DivConquer {
 	
-	public static void main(String args[]) throws IOException {
-		File fileRead = new File("D:\\Eclipse\\week5\\src\\main\\resources\\mergeSort.txt");
-		Scanner sc = new Scanner(fileRead);
-		String line = sc.nextLine();
-		String s[] = line.split(",");
-		int num[] = new int[s.length];
-		
-		int high =num.length;
-	
-		for(int i=0; i<s.length; i++ ) {
-			num[i] = Integer.parseInt(s[i]);
-		}
-		
-		mergeSort(num, 0, high-1);
-		String n = Arrays.toString(num);
-		
-		System.out.println(n);
-		
-	}
-	
 	public static void mergeSort(int arr[], int lower, int upper) {
 		if(lower < upper) {
 			int mid = (lower+upper)/2;		//sorting
@@ -38,7 +18,8 @@ public class DivConquer {
 		}
 	}
 
-	private static void merge(int[] arr, int lower, int mid, int upper) {
+	public static void merge(int[] arr, int lower, int mid, int upper) {
+
 		int leftSize = mid - lower+1;
 		int rightSize = upper - mid;
 		
@@ -74,7 +55,46 @@ public class DivConquer {
 			arr[k] = rightArray[j];
 			j++;
 			k++;
+		}	
+	}
+	
+	static int binarySearch(int arr[], int low, int high, int item) {
+		if(high >= low) {
+			int mid = (low+high)/2;
+			
+			if(arr[mid] == item)
+				return mid;
+			if(arr[mid] > item)
+				return binarySearch(arr, low, mid, item);
+			return binarySearch(arr, mid+1, high, item);	
+		
 		}
+		return -1;
+	}
+	
+	public static void main(String args[]) throws IOException {
+		File fileRead = new File("D:\\Eclipse\\week5\\src\\main\\resources\\mergeSort.txt");
+		Scanner sc = new Scanner(fileRead);
+		String line = sc.nextLine();
+		String s[] = line.split(",");
+		int num[] = new int[s.length];
+		
+		int high =num.length;
+	
+		for(int i=0; i<s.length; i++ ) {
+			num[i] = Integer.parseInt(s[i]);
+		}
+		sc.close();
+		mergeSort(num, 0, high-1);
+		String n = Arrays.toString(num);
+		
+		System.out.println(n);
+		
+		int searchItem = binarySearch(num, 0, (num.length - 1), 22);
+		
+		if(searchItem == -1)
+			System.out.println("Number not found ");
+		System.out.println("Number found at index: " + searchItem);
 	}
 
 }
