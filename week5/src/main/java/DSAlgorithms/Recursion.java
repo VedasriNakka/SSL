@@ -8,11 +8,11 @@ import java.util.Scanner;
 public class Recursion {
 	
 	static int recursion(int n1, int n2) {
-		if(n1 > n2)
+		if(n2 == 0)
 			return 0;
 		else {
-			System.out.println(n1);
-			return recursion(n1+2, n2);
+			System.out.println(n2);
+			return recursion(n1, n2-2);
 		}
 		
 	}
@@ -21,7 +21,7 @@ public class Recursion {
 		File readfile = new File("D:\\Eclipse\\week5\\src\\main\\resources\\RecursionInt.txt");	//loading file
 		Scanner sc = new Scanner(readfile);
 		int number = sc.nextInt();
-		System.out.println(number);
+		System.out.println("Number is: "+number);
 		
 		recursion(0 ,number);
 		sc.close();

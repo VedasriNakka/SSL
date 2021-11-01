@@ -90,7 +90,7 @@ public class DivConquer {
 		
 		System.out.println(n);
 		
-		int searchItem = binarySearch(num, 0, (num.length - 1), 22);
+		int searchItem = binarySearch(num, 0, (num.length - 1), 3);
 		
 		if(searchItem == -1)
 			System.out.println("Number not found ");
